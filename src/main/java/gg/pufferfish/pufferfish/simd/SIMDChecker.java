@@ -3,7 +3,6 @@ package gg.pufferfish.pufferfish.simd;
 import jdk.incubator.vector.FloatVector;
 import jdk.incubator.vector.IntVector;
 import jdk.incubator.vector.VectorSpecies;
-import xyz.refinedev.spigot.utils.JavaUtil;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,7 +11,7 @@ public class SIMDChecker {
 
     public static boolean canEnable(Logger logger) {
         try {
-            if (JavaUtil.getVersion() < 17 || JavaUtil.getVersion() > 23) {
+            if (SIMDDetection.getJavaVersion() < 17 || SIMDDetection.getJavaVersion() > 23) {
                 return false;
             } else {
                 SIMDDetection.testRun = true;
